@@ -10,7 +10,7 @@ protocol MainPresenterProtocol: class {
     func configureView()
 }
 
-class MainPresenter: MainPresenterProtocol {
+final class MainPresenter: MainPresenterProtocol {
     weak var view: MainViewProtocol!
     var interactor: MainInteractorProtocol!
     
@@ -20,7 +20,6 @@ class MainPresenter: MainPresenterProtocol {
     
     func configureView() {
         interactor.loadData(handler: { error in
-            
         })
     }
 }

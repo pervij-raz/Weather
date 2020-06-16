@@ -10,7 +10,7 @@ protocol MainConfiguratorProtocol: class {
     func configure(with viewController: MainViewController)
 }
 
-class MainConfigurator: MainConfiguratorProtocol {
+final class MainConfigurator: MainConfiguratorProtocol {
     func configure(with viewController: MainViewController) {
         let presenter = MainPresenter(view: viewController)
         let interactor = MainInteractor(presenter: presenter)

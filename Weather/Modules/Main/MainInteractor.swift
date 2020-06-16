@@ -10,7 +10,7 @@ protocol MainInteractorProtocol: class {
     func loadData(handler: @escaping ((Error?) -> ()))
 }
 
-class MainInteractor: MainInteractorProtocol {
+final class MainInteractor: MainInteractorProtocol {
     weak var presenter: MainPresenterProtocol!
     private let manager = NetworkManager()
     

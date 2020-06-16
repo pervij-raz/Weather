@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 protocol MainViewProtocol: class {
     
@@ -33,6 +34,7 @@ final class MainViewController: UIViewController, MainViewProtocol {
         let cell = UINib(nibName: "MainCollectionViewCell",
                                   bundle: nil)
         self.collectionView.register(cell, forCellWithReuseIdentifier: reuseID)
+        print(Realm.Configuration.defaultConfiguration.fileURL)
     }
 }
 

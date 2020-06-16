@@ -19,6 +19,7 @@
 		AD5706CA2497BB56008FA9B0 /* MainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5706C82497BB56008FA9B0 /* MainCollectionViewCell.swift */; };
 		AD5706CB2497BB56008FA9B0 /* MainCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD5706C92497BB56008FA9B0 /* MainCollectionViewCell.xib */; };
 		AD5706CD2497C3B5008FA9B0 /* WeatherResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5706CC2497C3B5008FA9B0 /* WeatherResponse.swift */; };
+		AD5706D22498B8DB008FA9B0 /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5706D12498B8DB008FA9B0 /* Forecast.swift */; };
 		EAC9DEDE16B184F39F8066C3 /* Pods_Weather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6646F2B457FEDFD50A347B96 /* Pods_Weather.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +41,7 @@
 		AD5706C82497BB56008FA9B0 /* MainCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewCell.swift; sourceTree = "<group>"; };
 		AD5706C92497BB56008FA9B0 /* MainCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainCollectionViewCell.xib; sourceTree = "<group>"; };
 		AD5706CC2497C3B5008FA9B0 /* WeatherResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherResponse.swift; sourceTree = "<group>"; };
+		AD5706D12498B8DB008FA9B0 /* Forecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				AD5706CC2497C3B5008FA9B0 /* WeatherResponse.swift */,
+				AD5706D12498B8DB008FA9B0 /* Forecast.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 				AD5706C32497B8A3008FA9B0 /* MainPresenter.swift in Sources */,
 				AD5706BD2497A22E008FA9B0 /* NetworkManager.swift in Sources */,
 				AD5706C12497B7C2008FA9B0 /* MainConfigurator.swift in Sources */,
+				AD5706D22498B8DB008FA9B0 /* Forecast.swift in Sources */,
 				AD5706AD24979E10008FA9B0 /* MainViewController.swift in Sources */,
 				AD5706C72497B98A008FA9B0 /* MainInteractor.swift in Sources */,
 				AD5706A924979E10008FA9B0 /* AppDelegate.swift in Sources */,

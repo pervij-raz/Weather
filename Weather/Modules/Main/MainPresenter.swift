@@ -19,7 +19,7 @@ final class MainPresenter: MainPresenterProtocol {
     }
     
     func configureView() {
-        interactor.loadData(handler: { error in
+        interactor.loadData(handler: { error, data in
         })
     }
 }

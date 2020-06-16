@@ -8,18 +8,27 @@
 
 protocol MainPresenterProtocol: class {
     func configureView()
+    var forecasts: [Forecast] { get }
 }
 
 final class MainPresenter: MainPresenterProtocol {
     weak var view: MainViewProtocol!
     var interactor: MainInteractorProtocol!
+    var forecasts: [Forecast] {
+        interactor.forecasts.sorted { $0.name < $1.name }
+    }
     
     required init(view: MainViewProtocol) {
         self.view = view
     }
     
     func configureView() {
-        interactor.loadData(handler: { error, data in
+        interactor.loadData(handler: { [weak self] error in
+            guard let error = error else {
+                self?.view.updateCollectionView()
+                return
+            }
+            self?.view.showError(error: error)
         })
     }
 }

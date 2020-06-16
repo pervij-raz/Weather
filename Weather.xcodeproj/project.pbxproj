@@ -96,6 +96,7 @@
 			children = (
 				AD5706D02498AE7D008FA9B0 /* Network */,
 				AD5706CF2498AE6F008FA9B0 /* Model */,
+				AD5706CE2498AE4E008FA9B0 /* UI */,
 				AD5706BE2497B746008FA9B0 /* Modules */,
 				AD5706A824979E10008FA9B0 /* AppDelegate.swift */,
 				AD5706B624979E14008FA9B0 /* Info.plist */,
@@ -114,7 +115,6 @@
 		AD5706BF2497B754008FA9B0 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				AD5706CE2498AE4E008FA9B0 /* UI */,
 				AD5706AC24979E10008FA9B0 /* MainViewController.swift */,
 				AD5706C02497B7C2008FA9B0 /* MainConfigurator.swift */,
 				AD5706C22497B8A3008FA9B0 /* MainPresenter.swift */,

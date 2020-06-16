@@ -10,10 +10,11 @@ import UIKit
 import RealmSwift
 
 protocol MainViewProtocol: class {
-    
+    func updateCollectionView()
+    func showError(error: Error)
 }
 
-final class MainViewController: UIViewController, MainViewProtocol {
+final class MainViewController: UIViewController {
     
     // MARK: Properties
     
@@ -29,12 +30,26 @@ final class MainViewController: UIViewController, MainViewProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let cell = UINib(nibName: "MainCollectionViewCell",
+                         bundle: nil)
+        self.collectionView.register(cell, forCellWithReuseIdentifier: reuseID)
         configurator.configure(with: self)
         presenter.configureView()
-        let cell = UINib(nibName: "MainCollectionViewCell",
-                                  bundle: nil)
-        self.collectionView.register(cell, forCellWithReuseIdentifier: reuseID)
-        print(Realm.Configuration.defaultConfiguration.fileURL)
+    }
+}
+
+// MARK: MainViewProtocol
+
+extension MainViewController: MainViewProtocol {
+    func updateCollectionView() {
+        collectionView.reloadData()
+    }
+    
+    func showError(error: Error) {
+        let alertController = UIAlertController(title: "Something went wrong", message: error.localizedDescription, preferredStyle: .alert)
+        let defaultAction = UIAlertAction(title: "OK", style: .cancel)
+        alertController.addAction(defaultAction)
+        self.present(alertController, animated: true, completion: nil)
     }
 }
 
@@ -42,13 +57,14 @@ final class MainViewController: UIViewController, MainViewProtocol {
 
 extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        30
+        presenter.forecasts.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseID, for: indexPath) as? MainCollectionViewCell else {
             return UICollectionViewCell()
         }
+        cell.setup(with: presenter.forecasts[indexPath.row])
         return cell
     }
 }

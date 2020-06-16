@@ -15,10 +15,10 @@ final class MainCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var minTempLabel: UILabel!
     @IBOutlet weak var maxTempLabel: UILabel!
     
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    func setup(with data: Forecast) {
+        cityLabel.text = data.name
+        minTempLabel.text = "\(Int(data.minTemp.rounded()))°C"
+        maxTempLabel.text = "\(Int(data.maxTemp.rounded()))°C"
+        descriptionLabel.text = data.forecastDescription
     }
-
 }

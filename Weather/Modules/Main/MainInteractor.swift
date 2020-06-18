@@ -50,6 +50,7 @@ final class MainInteractor: MainInteractorProtocol {
                     forecast.minTemp = weather?.tempMin ?? 0
                     forecast.maxTemp = weather?.tempMax ?? 0
                     forecast.forecastDescription = weather?.description ?? ""
+                    forecast.icon = weather?.icon ?? ""
                     self.realm.add(forecast)
                 }
             }

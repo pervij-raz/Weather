@@ -24,6 +24,7 @@ struct CityWeather: Decodable {
     var tempMin: Double?
     var tempMax: Double?
     var description: String?
+    var icon: String?
     
     enum CodingKeys: String, CodingKey {
         case name
@@ -36,10 +37,6 @@ struct CityWeather: Decodable {
         case tempMax = "temp_max"
     }
     
-    enum DescriptionCodingKeys: String, CodingKey {
-        case description
-    }
-    
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.name = try container.decode(String?.self, forKey: .name)
@@ -48,19 +45,23 @@ struct CityWeather: Decodable {
         self.tempMax = try main.decode(Double?.self, forKey: .tempMax)
         let weather = try container.decode([Weather].self, forKey: .weather)
         self.description = weather.first?.description
+        self.icon = weather.first?.icon
     }
 }
 
 struct Weather: Decodable {
     var description: String?
+    var icon: String?
     
     enum CodingKeys: String, CodingKey {
         case description
+        case icon
     }
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.description = try container.decode(String?.self, forKey: .description)
+        self.icon = try container.decode(String?.self, forKey: .icon)
     }
 }
 

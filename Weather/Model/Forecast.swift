@@ -13,4 +13,9 @@ class Forecast: Object {
     @objc dynamic var minTemp = 0.0
     @objc dynamic var maxTemp = 0.0
     @objc dynamic var forecastDescription = ""
+    @objc dynamic var icon = ""
+    
+    var iconURL: URL? {
+        URL(string: "http://openweathermap.org/img/wn/\(icon)@2x.png")
+    }
 }

@@ -11,7 +11,7 @@ import Alamofire
 class NetworkManager {
     
     private var url: URL? = {
-        URL(string: "http://api.openweathermap.org/data/2.5/box/city?bbox=12,32,15,37,10&appid=0732da88478eabca2216d946d5758695")
+        URL(string: "http://api.openweathermap.org/data/2.5/box/city?bbox=10,32,15,37,150&appid=0732da88478eabca2216d946d5758695")
     }()
     
     func loadData(handler: @escaping ((Error?, WeatherResponse?) -> ()) ) {

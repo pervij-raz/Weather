@@ -23,30 +23,36 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="XWl-By-PN1">
                                 <rect key="frame" x="0.0" y="0.0" width="397" height="312"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ou-6B-T6a">
-                                        <rect key="frame" x="166.5" y="0.0" width="64" height="111.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ou-6B-T6a">
+                                        <rect key="frame" x="166.5" y="0.0" width="64" height="54.5"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dmq-cG-TlK">
-                                        <rect key="frame" x="174.5" y="111.5" width="48" height="89"/>
+                                        <rect key="frame" x="174.5" y="54.5" width="48" height="138.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="hjZ-S4-1Zt">
-                                        <rect key="frame" x="154" y="200.5" width="89" height="111.5"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="hjZ-S4-1Zt">
+                                        <rect key="frame" x="0.0" y="193" width="397" height="119"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="22" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wKV-PP-Qq3">
-                                                <rect key="frame" x="0.0" y="0.0" width="29.5" height="111.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="22" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wKV-PP-Qq3">
+                                                <rect key="frame" x="0.0" y="0.0" width="119" height="119"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5dT-VV-XZy">
-                                                <rect key="frame" x="59.5" y="0.0" width="29.5" height="111.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AUZ-xB-nex">
+                                                <rect key="frame" x="139" y="0.0" width="119" height="119"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="AUZ-xB-nex" secondAttribute="height" multiplier="1:1" id="g2Q-tI-AAq"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5dT-VV-XZy">
+                                                <rect key="frame" x="278" y="0.0" width="119" height="119"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -77,6 +83,7 @@
             <connections>
                 <outlet property="cityLabel" destination="6Ou-6B-T6a" id="mi3-EX-Xhd"/>
                 <outlet property="descriptionLabel" destination="dmq-cG-TlK" id="YeV-43-gdX"/>
+                <outlet property="imageView" destination="AUZ-xB-nex" id="pTP-Wh-ggR"/>
                 <outlet property="maxTempLabel" destination="5dT-VV-XZy" id="5AF-Ef-irJ"/>
                 <outlet property="minTempLabel" destination="wKV-PP-Qq3" id="9OQ-pF-GH4"/>
             </connections>

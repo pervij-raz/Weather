@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AlamofireImage
 
 final class MainCollectionViewCell: UICollectionViewCell {
     
@@ -14,11 +15,15 @@ final class MainCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var minTempLabel: UILabel!
     @IBOutlet weak var maxTempLabel: UILabel!
+    @IBOutlet weak var imageView: UIImageView!
     
     func setup(with data: Forecast) {
         cityLabel.text = data.name
         minTempLabel.text = "\(Int(data.minTemp.rounded()))°C"
         maxTempLabel.text = "\(Int(data.maxTemp.rounded()))°C"
         descriptionLabel.text = data.forecastDescription
+        if let url = data.iconURL {
+            imageView.af.setImage(withURL: url)
+        }
     }
 }

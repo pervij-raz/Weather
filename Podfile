@@ -8,5 +8,6 @@ target 'Weather' do
   # Pods for Weather
 pod 'RealmSwift'
 pod 'Alamofire'
+pod 'AlamofireImage', '~> 4.1'
 
 end

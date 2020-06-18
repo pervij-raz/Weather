@@ -27,11 +27,15 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var humidityLabel: UILabel!
     @IBOutlet weak var windLabel: UILabel!
     
+    
+    // MARK: Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.configureView()
     }
+    
+    // MARK: Methods
     
     func setup(with data: Forecast) {
         cityLabel.text = data.name
@@ -42,6 +46,8 @@ class DetailViewController: UIViewController {
         windLabel.text = "\(data.windSpeed) km/h"
     }
 }
+
+// MARK: DetailViewProtocol
 
 extension DetailViewController: DetailViewProtocol {
     func setForecast(_ forecast: Forecast) {

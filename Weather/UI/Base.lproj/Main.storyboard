@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" contentInsetAdjustmentBehavior="never" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="RQj-ML-DCb">
-                                <rect key="frame" x="10" y="88" width="394" height="774"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="VSA-Tw-532">
                                     <size key="itemSize" width="190" height="150"/>
@@ -46,8 +46,8 @@
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="RQj-ML-DCb" secondAttribute="bottom" id="JeZ-g0-xZY"/>
                             <constraint firstItem="RQj-ML-DCb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="QQn-uR-bju"/>
-                            <constraint firstItem="RQj-ML-DCb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="YC8-bR-vjd"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="RQj-ML-DCb" secondAttribute="trailing" constant="10" id="eFL-9F-Ly0"/>
+                            <constraint firstItem="RQj-ML-DCb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="YC8-bR-vjd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="RQj-ML-DCb" secondAttribute="trailing" id="eFL-9F-Ly0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

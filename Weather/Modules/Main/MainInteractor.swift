@@ -37,22 +37,26 @@ final class MainInteractor: MainInteractorProtocol {
     private func saveData(_ data: WeatherResponse) {
         for weather in data.list {
             guard let name = weather?.name else { return }
-            if let forecast = forecasts.filter({ $0.name == name }).first {
-                try? realm.write() {
-                    forecast.minTemp = weather?.tempMin ?? 0
-                    forecast.maxTemp = weather?.tempMax ?? 0
-                    forecast.forecastDescription = weather?.description ?? ""
-                }
+            var forecast: Forecast
+            if let existedForecast = forecasts.filter({ $0.name == name }).first {
+                forecast = existedForecast
             } else {
+                forecast = Forecast()
                 try? realm.write() {
-                    let forecast = Forecast()
                     forecast.name = weather?.name ?? ""
-                    forecast.minTemp = weather?.tempMin ?? 0
-                    forecast.maxTemp = weather?.tempMax ?? 0
-                    forecast.forecastDescription = weather?.description ?? ""
-                    forecast.icon = weather?.icon ?? ""
                     self.realm.add(forecast)
                 }
+            }
+            try? realm.write() {
+                forecast.minTemp = weather?.tempMin ?? 0
+                forecast.maxTemp = weather?.tempMax ?? 0
+                forecast.forecastDescription = weather?.description ?? ""
+                forecast.icon = weather?.icon ?? ""
+                forecast.feelsLike = weather?.feelsLike ?? 0.0
+                forecast.humidity = weather?.humidity ?? 0
+                forecast.pressure = weather?.pressure ?? 0
+                forecast.temp = weather?.temp ?? 0.0
+                forecast.windSpeed = weather?.windSpeed ?? 0
             }
         }
     }

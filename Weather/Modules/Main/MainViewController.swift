@@ -67,5 +67,9 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         cell.setup(with: presenter.forecasts[indexPath.row])
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        presenter.openDetails(for: indexPath.row)
+    }
 }
 

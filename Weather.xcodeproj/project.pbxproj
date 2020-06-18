@@ -20,6 +20,12 @@
 		AD5706CB2497BB56008FA9B0 /* MainCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD5706C92497BB56008FA9B0 /* MainCollectionViewCell.xib */; };
 		AD5706CD2497C3B5008FA9B0 /* WeatherResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5706CC2497C3B5008FA9B0 /* WeatherResponse.swift */; };
 		AD5706D22498B8DB008FA9B0 /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5706D12498B8DB008FA9B0 /* Forecast.swift */; };
+		AD6B092E249B77140009B4C4 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6B092D249B77140009B4C4 /* DetailViewController.swift */; };
+		AD6B0930249B77270009B4C4 /* DetailConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6B092F249B77270009B4C4 /* DetailConfigurator.swift */; };
+		AD6B0932249B774F0009B4C4 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6B0931249B774E0009B4C4 /* DetailPresenter.swift */; };
+		AD6B0934249B775E0009B4C4 /* DetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6B0933249B775E0009B4C4 /* DetailInteractor.swift */; };
+		AD6B0936249B8D110009B4C4 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6B0935249B8D110009B4C4 /* MainRouter.swift */; };
+		AD6B0938249B8D590009B4C4 /* DetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6B0937249B8D590009B4C4 /* DetailRouter.swift */; };
 		EAC9DEDE16B184F39F8066C3 /* Pods_Weather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6646F2B457FEDFD50A347B96 /* Pods_Weather.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +48,12 @@
 		AD5706C92497BB56008FA9B0 /* MainCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainCollectionViewCell.xib; sourceTree = "<group>"; };
 		AD5706CC2497C3B5008FA9B0 /* WeatherResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherResponse.swift; sourceTree = "<group>"; };
 		AD5706D12498B8DB008FA9B0 /* Forecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
+		AD6B092D249B77140009B4C4 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		AD6B092F249B77270009B4C4 /* DetailConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailConfigurator.swift; sourceTree = "<group>"; };
+		AD6B0931249B774E0009B4C4 /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
+		AD6B0933249B775E0009B4C4 /* DetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInteractor.swift; sourceTree = "<group>"; };
+		AD6B0935249B8D110009B4C4 /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
+		AD6B0937249B8D590009B4C4 /* DetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				AD5706BF2497B754008FA9B0 /* Main */,
+				AD6B092C249B76D90009B4C4 /* Detail */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -119,6 +132,7 @@
 				AD5706C02497B7C2008FA9B0 /* MainConfigurator.swift */,
 				AD5706C22497B8A3008FA9B0 /* MainPresenter.swift */,
 				AD5706C62497B98A008FA9B0 /* MainInteractor.swift */,
+				AD6B0935249B8D110009B4C4 /* MainRouter.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -150,6 +164,18 @@
 				AD5706BC2497A22E008FA9B0 /* NetworkManager.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		AD6B092C249B76D90009B4C4 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				AD6B092D249B77140009B4C4 /* DetailViewController.swift */,
+				AD6B092F249B77270009B4C4 /* DetailConfigurator.swift */,
+				AD6B0931249B774E0009B4C4 /* DetailPresenter.swift */,
+				AD6B0933249B775E0009B4C4 /* DetailInteractor.swift */,
+				AD6B0937249B8D590009B4C4 /* DetailRouter.swift */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,15 +294,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD6B0938249B8D590009B4C4 /* DetailRouter.swift in Sources */,
 				AD5706CA2497BB56008FA9B0 /* MainCollectionViewCell.swift in Sources */,
+				AD6B0936249B8D110009B4C4 /* MainRouter.swift in Sources */,
 				AD5706C32497B8A3008FA9B0 /* MainPresenter.swift in Sources */,
+				AD6B0930249B77270009B4C4 /* DetailConfigurator.swift in Sources */,
 				AD5706BD2497A22E008FA9B0 /* NetworkManager.swift in Sources */,
 				AD5706C12497B7C2008FA9B0 /* MainConfigurator.swift in Sources */,
 				AD5706D22498B8DB008FA9B0 /* Forecast.swift in Sources */,
 				AD5706AD24979E10008FA9B0 /* MainViewController.swift in Sources */,
 				AD5706C72497B98A008FA9B0 /* MainInteractor.swift in Sources */,
+				AD6B0934249B775E0009B4C4 /* DetailInteractor.swift in Sources */,
+				AD6B092E249B77140009B4C4 /* DetailViewController.swift in Sources */,
 				AD5706A924979E10008FA9B0 /* AppDelegate.swift in Sources */,
 				AD5706CD2497C3B5008FA9B0 /* WeatherResponse.swift in Sources */,
+				AD6B0932249B774F0009B4C4 /* DetailPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

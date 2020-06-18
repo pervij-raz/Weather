@@ -9,11 +9,14 @@
 protocol MainPresenterProtocol: class {
     func configureView()
     var forecasts: [Forecast] { get }
+    var router: MainRouterProtocol! { set get }
+    func openDetails(for indexPath: Int)
 }
 
 final class MainPresenter: MainPresenterProtocol {
     weak var view: MainViewProtocol!
     var interactor: MainInteractorProtocol!
+    var router: MainRouterProtocol!
     var forecasts: [Forecast] {
         interactor.forecasts.sorted { $0.name < $1.name }
     }
@@ -30,5 +33,9 @@ final class MainPresenter: MainPresenterProtocol {
             }
             self?.view.showError(error: error)
         })
+    }
+    
+    func openDetails(for indexPath: Int) {
+        router.openDetail(for: forecasts[indexPath])
     }
 }
